@@ -1,9 +1,14 @@
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\PaystackSampleWebApp.dll.config
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\PaystackSampleWebApp.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\PaystackSampleWebApp.pdb
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\EntityFramework.dll
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\EntityFramework.SqlServer.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Microsoft.Web.Infrastructure.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Newtonsoft.Json.dll
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Ninject.dll
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Ninject.Web.Common.dll
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Ninject.Web.Mvc.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Paystack.Net.Contstants.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Paystack.Net.Interfaces.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Paystack.Net.Models.dll
@@ -16,7 +21,13 @@ C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\System.Web.Razor.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\System.Web.Webpages.Deployment.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\System.Web.Webpages.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\System.Web.Webpages.Razor.dll
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\WebActivatorEx.dll
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\EntityFramework.xml
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\EntityFramework.SqlServer.xml
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Ninject.xml
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Ninject.Web.Common.xml
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\Ninject.Web.Mvc.xml
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\System.Net.Http.Extensions.xml
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\System.Net.Http.Primitives.xml
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\System.Web.Razor.xml
@@ -26,7 +37,7 @@ C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\System.Web.Webpages.
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\System.Web.Helpers.xml
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\bin\System.Web.Mvc.xml
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\obj\Debug\PaystackSampleWebApp.csproj.App.config
-C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\obj\Debug\PaystackSampleWebApp.csprojResolveAssemblyReference.cache
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\obj\Debug\PaystackSampleWebApp.csproj.CoreCompileInputs.cache
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\obj\Debug\PaystackSampleWebApp.dll
 C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\obj\Debug\PaystackSampleWebApp.pdb
+C:\dev\WebApp\PaystackSampleWebApp\PaystackSampleWebApp\obj\Debug\PaystackSampleWebApp.csprojResolveAssemblyReference.cache

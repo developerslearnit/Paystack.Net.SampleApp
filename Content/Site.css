@@ -68,7 +68,7 @@ ul.dropdown-cart {
 
 .body-content{
 
-    margin-top:70px;
+    margin-top:30px;
 
 } 
 
@@ -78,6 +78,7 @@ ul.dropdown-cart {
     margin-top: 10px;
     background: #fff;
     padding: 6px;
+    height:259px !important;
     -webkit-box-shadow: 0 1px 4px 0 rgba(21,180,255,0.5);
     box-shadow: 0 1px 1px 0 rgba(21,180,255,0.5);
 }
@@ -276,8 +277,8 @@ ul.dropdown-cart {
     }
 
 .product-deatil .price-container {
-    font-size: 24px;
-    margin: 0;
+    font-size: 19px;
+    margin-top: 5px;
     font-weight: 300;
 }
 
@@ -366,3 +367,30 @@ ul.dropdown-cart {
         position: relative
     }
 }
+
+
+.redirect-message {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 99999;
+    /*opacity:0;*/
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+    .redirect-message div {
+        width: 600px;
+        position: relative;
+        margin: 20% auto;
+        padding: 20px;
+        border-radius: 10px;
+        background:#fff;
+        text-align:center;
+    }

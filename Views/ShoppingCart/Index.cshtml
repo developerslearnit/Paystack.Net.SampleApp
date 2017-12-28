@@ -1,0 +1,188 @@
+﻿@model IEnumerable<PaystackSampleWebApp.Models.ViewModels.CartViewModel>
+
+@{
+    ViewBag.Title = "Shopping Cart";
+    decimal _totalAmount = 0;
+}
+
+<div style="display:none" class="redirect-message">
+    <div>
+        <p><img src="@Url.Content("~/Content/loading.gif")" alt="Alternate Text" /> </p>
+        <p>Please wait..</p>
+        <p>You are been redirected to a secure payment system</p>
+    </div>
+
+</div>
+
+<div style="margin-top:40px" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Shopping Cart</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @if (Model.Count() > 0)
+                    {
+
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="col-sm-8 col-md-6">
+                                    <div class="media">
+                                        <a class="thumbnail pull-left" href="#"> <img class="media-object" src="@Url.Content($"~/Content/images/products/{item.productImage}")" style="width: 72px; height: 72px;"> </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading"><a href="#">@item.productName</a></h4>
+
+                                            <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-sm-1 col-md-1" style="text-align: center">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" value="@item.quantity">
+                                </td>
+                                <td class="col-sm-1 col-md-1 text-center"><strong>@item.price.ToString("#,##.00")</strong></td>
+                                <td class="col-sm-1 col-md-1 text-center"><strong>@item.totalAmount.ToString("#,##.00")</strong></td>
+                                <td class="col-sm-1 col-md-1">
+                                    <button type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove"></span> Remove
+                                    </button>
+                                </td>
+                            </tr>
+
+                            _totalAmount += item.totalAmount;
+                        }
+                    }
+
+
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h3>Total</h3></td>
+                        <td class="text-right"><h3><strong> @_totalAmount.ToString("#,##.00")</strong></h3></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td></td>
+                        <td>
+                            <a href="@Url.Action("index","home")" class="btn btn-default">
+                                <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+        <div style="background:#fff;padding:0 20px" class="col-md-3">
+            <div class="form-horizontal">
+                <h3>Customer Details</h3>
+                <div class="form-group">
+                    <label class="control-label">
+                        First Name
+                    </label>
+                    <input type="text" name="firstName" id="firstName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">
+                        Last Name
+                    </label>
+                    <input type="text" name="lastName" id="lastName" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">
+                        Email
+                    </label>
+                    <input type="email" name="email" id="email" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">
+                        Phone
+                    </label>
+                    <input type="text" name="phone" id="phone" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <a id="payNowButton" href="@_totalAmount" class="btn btn-success pull-right payNowBtn">
+                        Pay Now <span class="glyphicon glyphicon-play"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script>
+
+        $(function () {
+
+
+
+          function InitTransaction(data) {
+            return $.ajax({
+                type: "POST",
+                url: "@Url.Action("InitializePayment", "AppLogic", new { area=""})",
+                    data: data,
+                    dataType: 'json',
+                    contentType: 'application/json;charset=utf-8'
+            });
+           }
+
+          $("#payNowButton").click(function (e) {
+              $(".redirect-message").show();
+              e.preventDefault();
+              var amnt =parseInt((parseInt($(this).attr("href")) * 100));
+
+            var data = JSON.stringify({
+                firstName: $("#firstName").val(),
+                lastName: $("#lastName").val(),
+                email: $("#email").val(),
+                phone: $("#phone").val(),
+                amount: amnt
+              });
+
+
+
+            $.when(InitTransaction(data)).then(function (response) {
+
+
+                if (response.error == false) {
+
+                    window.location.href = response.result.data.authorization_url;
+                } else {
+                    $(".redirect-message").hide();
+                }
+
+            }).fail(function () {
+                $(".redirect-message").hide()
+                });
+
+        });
+
+    });
+
+    </script>
+}
+
+

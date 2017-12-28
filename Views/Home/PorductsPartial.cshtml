@@ -1,0 +1,74 @@
+﻿@model IEnumerable<PaystackSampleWebApp.Models.DataModel.Product>
+
+
+@helper TruncateChars(string desc, int len)
+    {
+        if (desc.Length > len)
+        {
+            <p>
+                @desc.Substring(0, len)
+            </p>
+        }
+        else
+        {
+            <p>
+                @desc
+            </p>
+        }
+
+}
+
+@foreach (var product in Model)
+{
+    <div class="col-xs-12 col-md-6">
+        <!-- First product box start here-->
+        <div class="prod-info-main prod-wrap clearfix">
+            <div class="row">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <div class="product-image">
+                        <img src="@Url.Content($"~/Content/images/products/{product.ProductImage}")" alt="194x228" class="img-responsive">
+                        <span class="tag2 hot">
+                            HOT
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12">
+                    <div class="product-deatil">
+                        <h5 class="name">
+                            <a href="#">
+                                @product.ProductName
+                            </a>
+                        </h5>
+                        <p class="price-container">
+                            <span>N @product.Price.ToString("#,##.00")</span>
+                        </p>
+                        <span class="tag1"></span>
+                    </div>
+                    <div class="description">
+                        @TruncateChars(product.Description, 40)
+                       
+                    </div>
+                    <div class="product-info smart-form">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="@product.PrpductId" data-amount="@product.Price" class="btn btn-danger addToCartButton">Add to cart</a>
+                                <a href="javascript:void(0);" class="btn btn-info">More info</a>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="rating">
+                                    Rating:
+                                    <label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+                                    <label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+                                    <label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+                                    <label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+                                    <label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end product -->
+    </div>
+}
